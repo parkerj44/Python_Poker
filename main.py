@@ -1,9 +1,11 @@
 import random
 
 
-def deal_cards(li):
+def score_card(li):
   
-  hand = []
+  score = 0
+
+  face_cards = ['K', 'A', 'J', 'Q']
 
   while len(hand) < 2:
     hand.append(li.pop(random.randrange(len(li))))
@@ -23,11 +25,18 @@ def playgame():
     cards = cards * 4
     random.shuffle(cards)
 
-    dealer_hand = deal_cards(cards)
+    dealer_hand = []
+    dealers_hidden = []
+    player_hand = []
 
-    print(dealer_hand)
-    print(cards)
-    break
+    dealers_hidden.append(cards.pop(1))
+    dealer_hand.append(cards.pop(2))
+    player_hand.append(cards.pop(0))
+    player_hand.append(cards.pop(0))
+
+
+
+
 
     
 
